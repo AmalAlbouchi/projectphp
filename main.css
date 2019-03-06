@@ -1,0 +1,60 @@
+
+body {
+  padding-top: 56px;
+}
+.login{
+  color: black;
+  size: 16px;
+  display: inline;
+}
+
+.account-bt{
+  border-radius: 4px;
+  background-color: white;
+  border: none;
+  text-align: center;
+  padding:2px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.account-bt a {
+  color: black !important;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.account-bt a:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+.account-bt:hover a {
+  padding-right: 15px;
+  text-decoration: none;
+}
+
+.account-bt:hover a:after {
+  opacity: 1;
+  right: 0;
+}
+.brand{
+  vertical-align: middle;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: white;
+}
+footer{
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
