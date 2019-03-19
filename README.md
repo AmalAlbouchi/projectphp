@@ -27,12 +27,13 @@
 - id | int | `foreign`
 
 #### user:
-- pseudo | txt `primary`
+- username | txt `primary`
 - password | txt
 - type | bool (0 admin/ 1 client)
 - gender | bool (0 female/ 1 male) 
-- name | txt
-- familyname | txt 
+- first_name | txt
+- last_name | txt 
+- email | txt
 - address | txt
 - date_sign | date
 - phone | txt
