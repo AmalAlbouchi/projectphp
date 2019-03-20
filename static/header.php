@@ -52,10 +52,17 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/config.php');
           <li class="nav-item <?php if ($page==4) echo "active";?>">
             <a class="nav-link" href="/projectphp/pages/shop.php">Shop</a>
           </li>
-          <?php if ($page<=5) echo '<li class="nav-item account-bt">
-            <a href="/projectphp/pages/login.php">Login
+          <?php if ($page<5) 
+          {
+            echo '<li class="nav-item account-bt">
+            <a href="/projectphp/pages/loginform.php">Login
             <i class="fas fa-user login"></i></a>
-          </li>';?>
+            </li>';
+            echo '<li class="nav-item account-bt">
+            <a href="/projectphp/pages/signupform.php">Sign Up
+            <i class="far fa-user sign"></i></a>
+            </li>';}
+            ?>
         </ul>
       </div>
     </div>
