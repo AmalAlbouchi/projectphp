@@ -37,3 +37,8 @@
 - address | txt
 - date_sign | date
 - phone | txt
+
+#### commandes:
+- username | txt `foreign`
+- item_id | int `foreign`
+- date_comm | date

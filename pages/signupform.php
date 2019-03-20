@@ -3,19 +3,8 @@ $page=5;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-
-<div class="container">
-
 <br>
-
-
+<div class="container">
 
 
 
@@ -26,24 +15,24 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 	
 	
-	<form action="signup.php" method="post">
+	<form action="signup.php" method="post" onsubmit="return check()" name="myform">
 		<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="far fa-user"></i> </span>
 		 </div>
-        <input name="username" class="form-control" placeholder="Username" type="text">
+        <input name="username" class="form-control" placeholder="Username" type="text" required>
     </div>
 		<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="first_name" class="form-control" placeholder="First Name" type="text">
+        <input name="first_name" class="form-control" placeholder="First Name" type="text" required>
     </div>
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-users"></i> </span>
 		 </div>
-        <input name="last_name" class="form-control" placeholder="Last Name" type="text">
+        <input name="last_name" class="form-control" placeholder="Last Name" type="text" required>
     </div> <!-- form-group// -->
 
 
@@ -52,8 +41,8 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 		    	<span class="input-group-text"> <i class="fa fa-venus"></i> </span>
 			</div>
 		
-		<select class="form-control" name="gender">
-			<option selected=""> Select Gender</option>
+		<select class="form-control" name="gender" required>
+			<option value="">Select Gender</option>
 			<option value=1>Male</option>
 			<option value=0>Female</option>
 
@@ -64,7 +53,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-        <input name="email" class="form-control" placeholder="Email address" type="email">
+        <input name="email" class="form-control" placeholder="Email address" type="email" required>
     </div> <!-- form-group// -->
 
 
@@ -72,7 +61,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fas fa-map-marker-alt"></i></span>
 		 </div>
-        <input name="address" class="form-control" placeholder="Physical address" type="text">
+        <input name="address" class="form-control" placeholder="Physical address" type="text" required>
     </div>
 
 
@@ -81,33 +70,34 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 		</div>
 
-		<select class="custom-select" style="max-width: 120px;" name="phone">
-		    <option selected="">+216</option>
-		    <option value="+972">+972</option>
-		    <option value="+198">+198</option>
-		    <option value="+701">+701</option>
-		    <option value="+971">+971</option>
-			<option value="">Other</option>
-			
-			
-		</select>
-    	<input name="number" class="form-control" placeholder="Phone number" type="text">
+
+		<input value="+216" type="text" list="ph" class="form-control" style="max-width: 100px;" name="phone" required />
+			<datalist id="ph">
+				<option value="+216">+216</option>
+				<option value="+972">+972</option>
+				<option value="+198">+198</option>
+				<option value="+701">+701</option>
+				<option value="+971">+971</option>
+			</datalist>
+		
+		
+    	<input name="number" class="form-control" placeholder="Phone number" type="text" required>
     </div> <!-- form-group// -->
 
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass1" class="form-control" placeholder="Create password" type="password">
+        <input name="pass1" class="form-control" placeholder="Create password" type="password" required>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass2" class="form-control" placeholder="Repeat password" type="password">
+        <input name="pass2" class="form-control" placeholder="Repeat password" type="password" required>
     </div> <!-- form-group// -->                                      
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" onclick="check()"> Create Account  </button>
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
     <p class="text-center">Have an account? <a href="/projectphp/pages/loginform.php">Log In</a> </p>                                                                 
 </form>
@@ -116,9 +106,14 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 </div> 
 <!--container end.//-->
+<br>
+<br>
+<br>
 
 
 
+
+<script src="../js/javascript.js"></script>
 
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/footer.php');
