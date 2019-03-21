@@ -1,6 +1,7 @@
 
 body {
   padding-top: 56px;
+  height:100%;
 }
 .login{
   color: black;
@@ -57,4 +58,7 @@ footer{
   position:absolute;
   bottom:0;
   width: 100%;
+}
+.container{
+  height:100%;
 }

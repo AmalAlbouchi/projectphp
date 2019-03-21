@@ -15,19 +15,19 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 	
 	
-<form action="login.php" method="post">
+<form action="login.php" method="post" name="formlog">
 		
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
-        <input name="" class="form-control" placeholder="Username" type="text">
+        <input name="username" class="form-control" placeholder="Username" type="text" required>
     </div> <!-- form-group// -->
 	<div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Password" type="password">
+        <input name="pass" class="form-control" placeholder="Password" type="password" required>
     </div>
 	
 	
@@ -35,7 +35,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
-    <p class="text-center">Don't have an account? <a href="/projectphp/pages/signupform.php">Sign up</a> </p>                                                          
+    <p class="text-center">Don't have an account? <a href="/projectphp/pages/signupform.php">Sign Up</a> </p>                                                          
 </form>
 </article>
 </div> <!-- card.// -->

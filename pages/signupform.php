@@ -15,7 +15,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 	
 	
-	<form action="signup.php" method="post" onsubmit="return check()" name="myform">
+	<form action="signup.php" method="post" onsubmit='return check()' name="myform">
 		<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="far fa-user"></i> </span>
@@ -113,7 +113,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 
 
-<script src="../js/javascript.js"></script>
+
 
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/footer.php');

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $hostname="localhost";
 $database="projectphp";
 $username="root";
