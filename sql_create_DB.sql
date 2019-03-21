@@ -38,6 +38,8 @@ CREATE TABLE `user` (
     `address` varchar(50)  NOT NULL ,
     `date_sign` date  DEFAULT GETDATE() ,
     `phone` text  NOT NULL ,
+    `pic` file  ,
+    `pic_name` varchar(255) ,
     PRIMARY KEY (
         `username`
     )
