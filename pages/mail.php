@@ -2,7 +2,7 @@
 <?php
 if (isset($_POST['text']) && isset($_POST['mail'])) {
 $to      = 'nobody@example.com';
-$subject = $_POST['subject'];
+if (isset($_POST['subject']) $subject = $_POST['subject'];
 $message = $_POST['text'];
 $message = wordwrap($message, 70, "\r\n");
 $headers = 'From:'.$_POST['mail'];
