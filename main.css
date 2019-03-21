@@ -55,10 +55,25 @@ body {
   color: white;
 }
 footer{
-  position:absolute;
+  position:fixed;
   bottom:0;
   width: 100%;
 }
 .container{
   height:100%;
+}
+
+#list_grp ul {
+  list-style: none;
+}
+
+#list_grp input {
+  visibility:hidden;
+}
+#list_grp label {
+  cursor: pointer;
+}
+#list_grp input:checked + label {
+  border: rgb(1, 226, 226) solid 1px;
+  box-shadow: rgb(1, 226, 226) 0 1px 1px 0;
 }

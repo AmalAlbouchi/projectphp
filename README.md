@@ -7,38 +7,7 @@
 
 ---------
 ## about the BD
-### 3 tables:
+### Diagram :
 
-#### product:
-- id | int auto_incr | `primary`
-- name | txt  
-- price | float
-- description | txt
-- brief-descr | txt
-- review | float (/5) 
-- category | int (0,1,2)
-- image | file
-- image-name | txt
-
-#### review:
-- text | txt
-- user | txt 
-- date | date
-- id | int | `foreign`
-
-#### user:
-- username | txt `primary`
-- password | txt
-- type | bool (0 admin/ 1 client)
-- gender | bool (0 female/ 1 male) 
-- first_name | txt
-- last_name | txt 
-- email | txt
-- address | txt
-- date_sign | date
-- phone | txt
-
-#### commandes:
-- username | txt `foreign`
-- item_id | int `foreign`
-- date_comm | date
+![DB Model](sql_create_DB.png)
+(ps: added pic to user)
