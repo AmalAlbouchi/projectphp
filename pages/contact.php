@@ -4,6 +4,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 
 <div class="container">
+<br>
 <h1>Contact Form</h1>
 <h2> Feel free to reach us for your concerns</h2>
 <br>
