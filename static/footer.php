@@ -6,11 +6,11 @@
     <!-- /.container -->
   </footer>
 
-  <script src="main.js"></script>
+
   <!-- Bootstrap core JavaScript -->
   <script src="/projectphp/jquery/jquery.min.js"></script>
   <script src="/projectphp/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/javascript.js"></script>
+  <script src="/projectphp/js/javascript.js"></script>
 
 </body>
 
