@@ -44,9 +44,9 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `commandes` (
-    `username` varchar2(20)  NOT NULL ,
+    `username` varchar(20)  NOT NULL ,
     `id` int  NOT NULL ,
-    `date_comm` date  NOT NULL 
+    `date_comm` date  DEFAULT GETDATE()
 );
 
 ALTER TABLE `review` ADD CONSTRAINT `fk_review_username` FOREIGN KEY(`username`)
