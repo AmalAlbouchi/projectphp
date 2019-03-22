@@ -68,10 +68,10 @@ $date=$res['date_sign'];
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="account.php">Cart</a>
+        <a class="nav-link" href="account.php">Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="account2.php">Profile data</a>
+        <a class="nav-link active" href="account2.php">Profile data</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="account3.php">Update profile</a>

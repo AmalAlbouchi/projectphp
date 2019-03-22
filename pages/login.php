@@ -22,7 +22,7 @@ if ($num == 1){
     <br>";
     echo "<br><img src='../images/pacman.gif'>
     </div>";
-    header("Refresh:4; url=../index.php");
+    header("Refresh:2; url=../index.php");
 }
 else{
 echo "<div class='container'>
@@ -32,7 +32,7 @@ echo "<div class='container'>
     <br>";
     echo "<br><img src='../images/pacman.gif'>
     </div>";
-header('Refresh:4; url=loginform.php');
+header('Refresh:2; url=loginform.php');
 }
 ?>
 

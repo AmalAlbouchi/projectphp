@@ -94,7 +94,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass2" class="form-control" placeholder="Repeat password" type="password" required>
+        <input name="pass2" class="form-control" placeholder="Confirm password" type="password" required>
     </div> <!-- form-group// -->                                      
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
