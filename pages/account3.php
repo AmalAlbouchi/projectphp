@@ -3,13 +3,14 @@ $page=7;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 <?php $username=$_SESSION['username'];
-
-$sql = "SELECT * FROM user WHERE username = 'kasei'";
+$sql = "SELECT * FROM user WHERE username = '$username'";
 $sth = mysqli_query($con,$sql);
 $res=mysqli_fetch_array($sth);
 $name=$res['first_name'];
 $last=$res['last_name'];
 $date=$res['date_sign'];
+$pass=$res['password'];
+$_SESSION['pass']=$pass;
 ?>
 
 <div class="container target" style="margin-top:50px;">
@@ -47,7 +48,7 @@ $date=$res['date_sign'];
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Reviews
-                    <span class="badge badge-light badge-pill">1</span>
+                    <span class="badge badge-light badge-pill">1<?php?></span>
                 </li>
                 </ul>
 
@@ -78,10 +79,10 @@ $date=$res['date_sign'];
 
   <div class="card-body"><br>
     <h5 class="card-title">Changing profile data</h5>
-    <article class="card-body mx-auto" style="max-width: 300px;">            
+    <article class="card-body mx-auto" style="max-width: 300px;" name='article'>            
 
-
-    <form method="POST" action="change.php" enctype="multipart/form-data" autocomplete="off">
+   
+    <form method="post" action="change.php" enctype="multipart/form-data" autocomplete="off" onsubmit="return myFunction()" id='myform' name='form'>
 
 
 
@@ -89,7 +90,7 @@ $date=$res['date_sign'];
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="far fa-user"></i> </span>
 		 </div>
-        <input name="username" class="form-control" placeholder="Change Username" type="text">
+        <input id="user" name="username" class="form-control" placeholder="Change Username" type="text">
     </div>
 		<div class="form-group input-group">
 		<div class="input-group-prepend">
@@ -158,14 +159,20 @@ $date=$res['date_sign'];
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass1" class="form-control" placeholder="Change password" type="password">
+        <input name="pass1" class="form-control" placeholder="Current password" type="password">
     </div>
 
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass2" class="form-control" placeholder="Confirm password" type="password">
+        <input name="pass2" class="form-control" placeholder="Change password" type="password">
+    </div>
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="pass3" class="form-control" placeholder="Confirm new password" type="password">
     </div>
 
 
@@ -174,10 +181,15 @@ $date=$res['date_sign'];
                 <span class="btn btn-secondary btn-file" style="width:300px;">
                     Change Profile Picture <input type="file" name="newimage">
                 </span>
-            </div>
-            <br>
-                <input type="submit" name="submit_image" value="Submit changes" class="btn btn-success">
+                </div>
+            
+                <input type="submit" name="submit" value="Submit changes" class="btn btn-success" style="width:260px;">
                 </form>
+                <br><br>
+                <form method="post">
+            <div class="form-group input-group">
+            <input type="submit" name="delete" id="delete" value="Delete profile picture" class="btn btn-danger" style="margin : auto;">
+            </div></form>
             </article>
     
   </div>
@@ -189,6 +201,34 @@ $date=$res['date_sign'];
 	</div>
        
 </div>
+
+<?php 
+    function func($con)
+    { $username=$_SESSION['username'];
+        $delete="update user set img = null where username = '$username';";
+        $rs=mysqli_query($con,$delete);
+        //header('Refresh:0; url=account.php');
+    }
+
+if(array_key_exists('delete',$_POST)){
+    func($con);
+    echo '<script type="text/javascript">location.href = "account.php";</script>';
+}
+?>
+
+<script>
+function myFunction() {
+        if(document.form.username.value == '' && document.form.first_name.value == '' && 
+        document.form.last_name.value == '' && document.form.gender.value == '' && 
+        document.form.email.value == '' && document.form.address.value == '' && 
+        document.form.number.value == '' && document.form.pass1.value == '' && 
+        document.form.pass2.value == '' && document.form.pass3.value == '' && document.form.newimage.value == ''){return false;}
+        //else if(document.form.number.value != '' && document.form.phone.value == '')
+        //{return false;}
+        return true;
+      }
+</script>
+
 <br><br><br><br>
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/footer.php');

@@ -3,8 +3,7 @@ $page=7;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 <?php $username=$_SESSION['username'];
-
-$sql = "SELECT * FROM user WHERE username = 'kasei'";
+$sql = "SELECT * FROM user WHERE username = '$username'";
 $sth = mysqli_query($con,$sql);
 $res=mysqli_fetch_array($sth);
 $name=$res['first_name'];

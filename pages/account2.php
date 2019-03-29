@@ -3,17 +3,16 @@ $page=7;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 <?php $username=$_SESSION['username'];
-
-$sql = "SELECT * FROM user WHERE username = 'kasei'";
+$sql = "SELECT * FROM user WHERE username = '$username'";
 $sth = mysqli_query($con,$sql);
 $res=mysqli_fetch_array($sth);
 $name=$res['first_name'];
 $last=$res['last_name'];
 $date=$res['date_sign'];
-//$gender=
-//$email=
-//$add=
-//$phone=
+if($res['gender']==1){$gender='Male';}else{$gender='Female';}
+$mail=$res['email'];
+$add=$res['address'];
+$phone=$res['phone'];
 ?>
 
 <div class="container target" style="margin-top:50px;">
@@ -83,9 +82,43 @@ $date=$res['date_sign'];
   </div>
 
   <div class="card-body"><br>
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a><br><br><br><br>
+    <h5 class="card-title">Profile data</h5><br>
+    <table class="table" style="width:400px; margin: 0 auto;">
+    <tr>
+      <th scope="row">Username</th>
+      <td><?php echo $username;?></td>
+    </tr>
+    <tr>
+      <th scope="row">First name</th>
+      <td><?php echo $name;?></td>
+    </tr>
+    <tr>
+      <th scope="row">Last name</th>
+      <td><?php echo $last;?></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><?php echo $gender;?></td>
+    </tr>
+    <tr>
+      <th scope="row">E-mail address</th>
+      <td><?php echo $mail;?></td>
+    </tr>
+    <tr>
+      <th scope="row">Physical address</th>
+      <td><?php echo $add;?></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone number</th>
+      <td><?php echo $phone;?></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+</table>
+
+    <br><br>
   </div>
 </div>
             
