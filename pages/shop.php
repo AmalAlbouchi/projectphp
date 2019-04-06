@@ -1,26 +1,43 @@
 <?php 
 $page=4;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
-if (isset($_GET['category'])) {
-  $category=$_GET['category'];
-}else {
-  $category=4;
-}
-
 ?>
+
 <div class="container">
 <div class="row">
 
 <div class="col-lg-3">
 
   <h1 class="my-4">Shop Name</h1>
-  <div class="list-group">
-    <a href="#?category=0" class="list-group-item">Category 1</a>
-    <a href="#?category=1" class="list-group-item">Category 2</a>
-    <a href="#?category=2" class="list-group-item">Category 3</a>
-    <a href="#?category=4" class="list-group-item">ALL</a>
+
+  <form onchange="showProducts()">
+  <div id="list_grp" class="list-group">
+    <ul>
+    <li>
+        <input type='radio' value='1' name='radio' id='radio1'/>
+        <label for='radio1'class="list-group-item">Category 1</label>
+    </li>
+    <li>
+        <input type='radio' value='2' name='radio'  id='radio2'/>
+        <label for='radio2'class="list-group-item">Category 2</label>
+    </li>
+    <li>
+        <input type='radio' value='3' name='radio'  id='radio3'/>
+        <label for='radio3'class="list-group-item">Category 3</label>
+    </li>
+    <li>
+        <input type='radio' value='4' name='radio'  id='radio4' checked/>
+        <label for='radio4'class="list-group-item">ALL</label>
+    </li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <label for='price_range'>Price : $<span id="price_show">2500</span> </label> 
+    <input type="range" class="form-control-range" name="price_range" id="price_range" min="0" max="5000" oninput="price_change(this.value)" onchange="price_change(this.value)">
   </div>
 
+  </form>
+  
 </div>
 <!-- /.col-lg-3 -->
 
@@ -52,35 +69,7 @@ if (isset($_GET['category'])) {
           </a>
         </div>
 
-        <div class="row">
-<?php 
-if ($category>3) {
-  $sql= "SELECT * FROM product";
-} else {
-  $sql= "SELECT * FROM product Where category = $category";
-}
-$result= mysqli_query($con,$sql);
-if ($result!=FALSE){
-      while ($product = mysqli_fetch_assoc($result)) {
-    echo '<div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-        <a href="projectphp/pages/item.php?product_id=<'.$Product['id'].'"><img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/></a>
-            <div class="card-body">
-                <h4 class="card-title">
-                  <a href="projectphp/pages/item.php?product_id='.$Product['id'].'">'.$product['name'].'</a>  
-                </h4>
-                <h5>'.$product['price'].'</h5>
-                <p class="card-text">'.$product['brief-discr'].'
-            </div>
-            <div class="card-footer">
-          <small class="text-muted">';
-        for ($i=0; $i <intval($product['review']) ; $i++) { echo "&#9733;";}
-        for ($i=0; $i <5-$product['review'] ; $i++) { echo "&#9734;";} 
-        echo '</small></div></div></div>';
-}
-}
-
-?>
+        <div class="row" id="txtHint">
 
       </div>
     </div>
