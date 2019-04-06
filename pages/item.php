@@ -3,13 +3,14 @@ $page=4;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 if(isset($_GET['product_id'])){
-    $sql="SELECT * FROM product Where id =".$_GET['product_id']."";
-    $result=mysqli_query($con,$sql);
+    $temp=$_GET['product_id'];
+    $sql="SELECT * FROM product Where id = $temp";
+    $result=mysqli_fetch_assoc(mysqli_query($con,$sql));
     if ($result!=FALSE){
 $Product_Name=$result['name'];
 $Product_Price=$result['price'];
 $Product_Description=$result['description'];
-$Product_Review=$result['review'];
+$Product_Review=$result['rate'];
 $Product_Image=$result['image'];
 echo '
 <div class="container">
@@ -24,7 +25,7 @@ echo '
                 <span class="text-warning">';
                 for ($i=0; $i <intval($Product_Review) ; $i++) { echo "&#9733;";}
                 for ($i=0; $i <5-$Product_Review ; $i++) { echo "&#9734;";} 
-               echo '</span>'.$Product_Review.'stars
+               echo '</span>'.$Product_Review.' stars
             </div>
             </div>
             <!-- /.card -->

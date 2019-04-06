@@ -12,7 +12,15 @@ function check2(){
 
     function showProducts() {
         p = document.getElementById("price_range").value;
-        catg = document.getElementsByName("radio").value;
+        var radios = document.getElementsByName('radio');
+        for (var i = 0; i < radios.length; i++)
+        {
+        if (radios[i].checked)
+        {
+            catg =parseInt(radios[i].value, 10);
+        break;
+        }
+    }
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -25,6 +33,6 @@ function check2(){
                     document.getElementById("txtHint").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET","shopdemo.php?p="+p+"?catg="+catg,true);
+            xmlhttp.open("GET","shopdemo.php?p="+p+"&catg="+catg,true);
             xmlhttp.send();
         }

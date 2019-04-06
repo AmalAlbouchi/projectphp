@@ -32,8 +32,8 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     </ul>
   </div>
   <div class="form-group">
-    <label for='price_range'>Price : $<span id="price_show">2500</span> </label> 
-    <input type="range" class="form-control-range" name="price_range" id="price_range" min="0" max="5000" oninput="price_change(this.value)" onchange="price_change(this.value)">
+    <label for='price_range'>Min Price : $<span id="price_show">0</span> </label> 
+    <input type="range" class="form-control-range" name="price_range" id="price_range" min="0" max="5000" value="0" oninput="price_change(this.value)" onchange="price_change(this.value)">
   </div>
 
   </form>
@@ -69,13 +69,17 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
           </a>
         </div>
 
-        <div class="row" id="txtHint">
-
-      </div>
+        <div class="row" id="txtHint"></div>
     </div>
   </div>
 </div>
+<script>
+window.onload = function(){
+  showProducts();
+}
+</script>
 
+<br><br><br><br><br>
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/footer.php');
 
