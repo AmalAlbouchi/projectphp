@@ -15,7 +15,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 	
 	
-	<form action="signup.php" method="post" onsubmit='return check()' name="myform">
+	<form action="signup.php" method="post" onsubmit='return Myfunction()' name="myform">
 		<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="far fa-user"></i> </span>
@@ -94,7 +94,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="pass2" class="form-control" placeholder="Repeat password" type="password" required>
+        <input name="pass2" class="form-control" placeholder="Confirm password" type="password" required>
     </div> <!-- form-group// -->                                      
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
@@ -113,6 +113,13 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 
 
 
+<script>
+function Myfunction() {
+        if (document.myform.pass1.value != document.myform.pass2.value)
+        {alert("Invalid Password"); return false;}
+        else{return true;}
+          }
+</script>
 
 
 <?php 

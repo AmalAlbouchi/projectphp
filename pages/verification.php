@@ -10,7 +10,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
     </div>
     
     
-    <?php header('Refresh:4; url=loginform.php');
+    <?php header('Refresh:2; url=loginform.php');
 ?>
 
 <?php 

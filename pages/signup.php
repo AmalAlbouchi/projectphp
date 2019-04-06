@@ -56,7 +56,7 @@ else if($nump == 1){
     </div>";
 }
 else {
-    $reg= "insert into user(username, password, first_name, last_name, email, phone, address, gender, date) values('$username','$pass','$firstname','$lastname','$email','$phonenumb','$address','$gender','$date')";
+    $reg= "insert into user(username, password, gender, first_name, last_name, email, address, date_sign, phone) values('$username','$pass','$gender','$firstname','$lastname','$email','$address','$date','$phonenumb')";
     $rs=mysqli_query($con,$reg);
     if($rs){
     echo "<div class='container'>
