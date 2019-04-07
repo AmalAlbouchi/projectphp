@@ -91,6 +91,7 @@ $date=$res['date_sign'];
       <th scope="col">Product Name</th>
       <th scope="col">Date</th>
       <th scope="col">Price</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -104,13 +105,19 @@ echo '<tr>
       <td scope="col"><a href="item.php?product_id='.$p['id'] .'">'.$p['id'] .'</a></td>
       <td scope="col">'. $p['name'] .'</td>
       <td scope="col">'. $p['date_comm'].'</td>
-      <td scope="col">'. $p['price'].'</td></tr>'
+      <td scope="col">'. $p['price'].'</td>
+      <td><a href="delete_item.php?product_id='.$p['id'].'"><i class="delete_item fas fa-times-circle"></i></a></td></tr>'
     ;}}
        ?>
   </tbody>
   </table>
  <br><br><br><br>
   </div>
+  <form action="delete_all.php" name="formlog">
+            <center><div class="form-group" style="text-align:center; width:100px;">
+                <button type="submit" class="btn btn-danger btn-block"> Delete All  </button>
+            </div></center>
+            </form>
 </div>
             
 

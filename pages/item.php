@@ -34,7 +34,7 @@ echo '
                 Product Reviews
             </div>
             <div class="card-body">';
-            $sql="SELECT * FROM reviews where id=".$_GET['product_id']."";
+            $sql="SELECT * FROM reviews where id='".$_GET['product_id']."'";
             $result=mysqli_query($con,$sql);
                 while ($review = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
                 echo '<p>'.$review['text'].'</p>';

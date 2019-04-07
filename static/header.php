@@ -62,8 +62,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/config.php');
             <a href="/projectphp/pages/signupform.php">Sign Up
             <i class="far fa-user sign"></i></a>
             </li>';}
-            else if (isset($_SESSION['username']))
-            {            
+            else if ($page<5 && isset($_SESSION['username'])){         
               echo '<li class="nav-item account-bt">
               <a href="/projectphp/pages/account.php">'.$_SESSION['username'].
               ' <i class="fas fa-user login"></i></a>
