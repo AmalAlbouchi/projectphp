@@ -13,7 +13,7 @@ if (!isset($_SESSION["Admin"])){
     <article class="card-body mx-auto" style="max-width: 300px;" name='article'>            
 
    
-    <form name="form" method="post" action="add_p.php" enctype="multipart/form-data" autocomplete="off"  onsubmit="return testP()">
+    <form name="form" method="post" action="add_p.php" enctype="multipart/form-data" autocomplete="off">
 		<div class="form-group input-group">
 				<div class="input-group-prepend">
 				    <span class="input-group-text"> <i class="fas fa-box-open"></i> </span>
@@ -32,14 +32,14 @@ if (!isset($_SESSION["Admin"])){
 				<div class="input-group-prepend">
 				    <span class="input-group-text"> <i class="fas fa-align-left"></i> </span>
 				 </div>
-		<textarea name="descripton" placeholder="Full Descripton" class="form-control" aria-label="With textarea" required></textarea>
+		<textarea name="description" placeholder="Full Descripton" class="form-control" aria-label="With textarea" required></textarea>
 		</div>
 
 		<div class="form-group input-group">
 				<div class="input-group-prepend">
 				    <span class="input-group-text"> <i class="fas fa-italic"></i></span>
 				 </div>
-		        <input name="brief-descr" class="form-control" placeholder="Short Descripton" type="text" required>
+		        <input name="brief_descr" class="form-control" placeholder="Short Descripton" type="text" required>
 		</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
@@ -57,11 +57,11 @@ if (!isset($_SESSION["Admin"])){
                 </form>
                 <br><br>
                 <center><h5 class="card-title">Deleting Product</h5></center>
-                <form method="post" name="form" action="delete_p.php">
+                <form method="post" name="form" action="delete_p.php" autocomplete="off">
 
                 <div class="form-group input-group">
 				<div class="input-group-prepend">
-				    <span class="input-group-text"> <i class="fas fa-box-open"></i> </span>
+				    <span class="input-group-text"> <i class="fas fa-box"></i> </span>
 				 </div>
 		        <input name="name" class="form-control" id="delete_p" name="id" placeholder="Product ID" type="number" required>
 		</div>
@@ -72,6 +72,7 @@ if (!isset($_SESSION["Admin"])){
             </article>
     
 </div>
+<br><br><br><br>
 
 <?php
 } 

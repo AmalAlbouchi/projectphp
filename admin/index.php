@@ -17,7 +17,7 @@ if (!isset($_SESSION["admin"])){
 
 	
 	
-<form action="access.php" method="post" name="formlog">
+<form action="access.php" method="post" name="formlog" autocomplete="off">
 		
 	<div class="form-group input-group">
 		<div class="input-group-prepend">

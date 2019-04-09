@@ -4,12 +4,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 
 
-<!--?php
-if(empty($_POST)) {
-echo "empty";
-}
-else{echo "not empty";}
-?-->
+
 
 
 <?php

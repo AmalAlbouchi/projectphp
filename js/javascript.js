@@ -36,3 +36,40 @@ function check2(){
             xmlhttp.open("GET","shopdemo.php?p="+p+"&catg="+catg,true);
             xmlhttp.send();
         }
+   
+        yes=0;
+
+   $(function(){
+        $(".njoum").on('click',function(){
+         len= parseInt($(this).attr('id'));
+         yes=len;
+        for (var i = yes+1; i <= 5; i++) {        
+            id="#"+i;
+           $(id).html('&#9734;');
+        };
+    }); 
+    });
+
+    $(function(){
+
+
+
+
+
+            $(".njoum").hover(function(){
+                len= parseInt($(this).attr('id'));
+                for (var i = yes+1; i <= len; i++) {        
+                    id="#"+i;
+                    console.log(id)
+                   $(id).html('&#9733;');}
+       
+               }, function(){
+                   // change to any color that was previously used.
+                   len= parseInt($(this).attr('id'));
+                   for (var i = yes+1; i <= len; i++) {        
+                       id="#"+i;
+                      $(id).html('&#9734;');
+                   };
+        
+    })
+    });

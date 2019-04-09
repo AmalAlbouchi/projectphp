@@ -104,3 +104,9 @@ footer{
 .delete_item:hover{
   color: red
 }
+.njoum{
+  background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
