@@ -12,7 +12,15 @@ function check2(){
 
     function showProducts() {
         p = document.getElementById("price_range").value;
-        catg = document.getElementsByName("radio").value;
+        var radios = document.getElementsByName('radio');
+        for (var i = 0; i < radios.length; i++)
+        {
+        if (radios[i].checked)
+        {
+            catg =parseInt(radios[i].value, 10);
+        break;
+        }
+    }
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -25,6 +33,43 @@ function check2(){
                     document.getElementById("txtHint").innerHTML = this.responseText;
                 }
             };
-            xmlhttp.open("GET","shopdemo.php?p="+p+"?catg="+catg,true);
+            xmlhttp.open("GET","shopdemo.php?p="+p+"&catg="+catg,true);
             xmlhttp.send();
         }
+   
+        yes=0;
+
+   $(function(){
+        $(".njoum").on('click',function(){
+         len= parseInt($(this).attr('id'));
+         yes=len;
+        for (var i = yes+1; i <= 5; i++) {        
+            id="#"+i;
+           $(id).html('&#9734;');
+        };
+    }); 
+    });
+
+    $(function(){
+
+
+
+
+
+            $(".njoum").hover(function(){
+                len= parseInt($(this).attr('id'));
+                for (var i = yes+1; i <= len; i++) {        
+                    id="#"+i;
+                    console.log(id)
+                   $(id).html('&#9733;');}
+       
+               }, function(){
+                   // change to any color that was previously used.
+                   len= parseInt($(this).attr('id'));
+                   for (var i = yes+1; i <= len; i++) {        
+                       id="#"+i;
+                      $(id).html('&#9734;');
+                   };
+        
+    })
+    });

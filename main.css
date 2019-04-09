@@ -80,7 +80,8 @@ footer{
   outline: none;   
   cursor: inherit;
   display: block;
-=======
+}
+
 #list_grp ul {
   list-style: none;
 }
@@ -94,4 +95,18 @@ footer{
 #list_grp input:checked + label {
   border: rgb(1, 226, 226) solid 1px;
   box-shadow: rgb(1, 226, 226) 0 1px 1px 0;
+}
+.delete_item{
+  height: 5px;
+  width: 5px;
+  color: rgb(127, 225, 255)
+}
+.delete_item:hover{
+  color: red
+}
+.njoum{
+  background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 }

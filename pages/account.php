@@ -82,10 +82,42 @@ $date=$res['date_sign'];
   </div>
 
   <div class="card-body"><br>
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a><br><br><br><br>
+
+    <h5 class="card-title">Your Products</h5>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<?php 
+$user=$_SESSION['username'];
+ $sql= "SELECT Commande.id, Commande.date_comm, Product.price, Product.name FROM Commande INNER JOIN Product ON Commande.id = Product.id WHERE Commande.username = '$user' ;";
+$result= mysqli_query($con,$sql);
+if ($result!=FALSE){
+      while ($p = mysqli_fetch_assoc($result)) {
+echo '<tr>
+      <td scope="col"><a href="item.php?product_id='.$p['id'] .'">'.$p['id'] .'</a></td>
+      <td scope="col">'. $p['name'] .'</td>
+      <td scope="col">'. $p['date_comm'].'</td>
+      <td scope="col">'. $p['price'].'</td>
+      <td><a href="delete_item.php?product_id='.$p['id'].'"><i class="delete_item fas fa-times-circle"></i></a></td></tr>'
+    ;}}
+       ?>
+  </tbody>
+  </table>
+ <br><br><br><br>
   </div>
+  <form action="delete_all.php" name="formlog">
+            <center><div class="form-group" style="text-align:center; width:100px;">
+                <button type="submit" class="btn btn-danger btn-block"> Delete All  </button>
+            </div></center>
+            </form>
 </div>
             
 
