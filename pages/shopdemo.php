@@ -39,7 +39,9 @@ if ($result!=FALSE){
         for ($i=0; $i <5-$product['rate'] ; $i++) { echo "&#9734;";} 
         echo '</small>';
         if ( $product['p_rate']==0 ) echo '</span> No Stars';
-        else echo '</span>'.$product['rate'].' stars';
+        else if ($product['rate']==1) echo '</span> 1 Star';
+        else if($product['rate']-floor($product['rate'])==0) echo '</span> '.$product['rate'].' Stars';
+        else echo '</span> '.number_format((float)$product['rate'], 2, ".", "").' Stars';
         echo'
         </div></div></div>';
 }
