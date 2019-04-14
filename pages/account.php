@@ -9,10 +9,10 @@ $res=mysqli_fetch_array($sth);
 $name=$res['first_name'];
 $last=$res['last_name'];
 $date=$res['date_sign'];
-//$gender=
-//$email=
-//$add=
-//$phone=
+$rev=$res['nb_review'];
+/*$s="select count(id) from review where username='$username'";
+$sthh=mysqli_query($con,$s);
+$rrr= mysqli_fetch_array($sthh);*/
 ?>
 
 <div class="container target" style="margin-top:50px;">
@@ -22,11 +22,11 @@ $date=$res['date_sign'];
             
             <?php 
            if ($res['img']!=null){
-                echo '<center><img class="rounded" width="200px" height="200px" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
+                echo '<center><img width="200px" height="200px"style="border-radius: 20%;" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
             }
                 else 
                 {
-                    echo '<center><img class="rounded" src="../images/user.png" width="200px" height="200px"><center>';
+                    echo '<center><img style="border-radius: 10%;" src="../images/user.png" width="200px" height="200px"><center>';
                 }
                 ?>
                
@@ -50,7 +50,7 @@ $date=$res['date_sign'];
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Reviews
-                    <span class="badge badge-light badge-pill">1</span>
+                    <span class="badge badge-light badge-pill"><?php echo $rev;?></span>
                 </li>
                 </ul>
 
@@ -96,25 +96,30 @@ $date=$res['date_sign'];
   </thead>
   <tbody>
 <?php 
+$s=0;
 $user=$_SESSION['username'];
  $sql= "SELECT Commande.id, Commande.date_comm, Product.price, Product.name FROM Commande INNER JOIN Product ON Commande.id = Product.id WHERE Commande.username = '$user' ;";
 $result= mysqli_query($con,$sql);
 if ($result!=FALSE){
       while ($p = mysqli_fetch_assoc($result)) {
+        $s+=$p['price'];
 echo '<tr>
       <td scope="col"><a href="item.php?product_id='.$p['id'] .'">'.$p['id'] .'</a></td>
       <td scope="col">'. $p['name'] .'</td>
       <td scope="col">'. $p['date_comm'].'</td>
       <td scope="col">'. $p['price'].'</td>
-      <td><a href="delete_item.php?product_id='.$p['id'].'"><i class="delete_item fas fa-times-circle"></i></a></td></tr>'
-    ;}}
+      <td><a href="delete_item.php?id='.$p['id'].'"><i class="delete_item fas fa-times-circle"></i></a></td></tr>'
+    ;}
+  } 
        ?>
   </tbody>
   </table>
  <br><br><br><br>
   </div>
   <form action="delete_all.php" name="formlog">
-            <center><div class="form-group" style="text-align:center; width:100px;">
+            <center>
+            <p> <strong>  <?php   echo "Total Price: $$s"; ?> </strong></p>
+            <div class="form-group" style="text-align:center; width:100px;">
                 <button type="submit" class="btn btn-danger btn-block"> Delete All  </button>
             </div></center>
             </form>
