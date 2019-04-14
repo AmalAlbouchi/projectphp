@@ -18,7 +18,7 @@ if ($result!=FALSE){
         <div class="card h-100">';
         if ($product['image']!=null){
        echo '
-       <div style="max-width: 100%; height: 300px; margin: 0 auto; display:flex; align-items:center;">
+       <div style="max-width: 100%; height: 100%; margin: 0 auto; display:flex; align-items:center;">
        <a href="item.php?product_id='.$product['id'].'"><center><img class="rounded" style="max-width: 100%; max-height: 300px;" src="data:image/jpeg;base64,'.base64_encode( $product['image'] ).'" alt="'.$product['image_name'].'"/></center></a>
        </div>';
       } else{

@@ -6,7 +6,7 @@ if (!isset($_POST["pass"]) && !isset($_POST["username"])){
     ?>
            <h1>Error</h1> follow this link and <a href="/projectphp/admin"><b>try agin</b></a>...
     <?php
-}elseif (!(strcmp($_POST["username"],"admin") || strcmp($_POST["pass"],"admin"))) {
+}elseif (!(strcmp($_POST["username"],"admin") && !(strcmp($_POST["pass"],"admin")))) {
     $_SESSION['admin']="admin"
     ?>
     
