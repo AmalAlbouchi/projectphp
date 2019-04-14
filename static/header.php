@@ -21,6 +21,12 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/config.php');
 
   <!--font awesome-->
   <link href="/projectphp/font/css/all.min" rel="stylesheet"> <!--load all styles -->
+  
+  <!--fonts-->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 </head>
 
