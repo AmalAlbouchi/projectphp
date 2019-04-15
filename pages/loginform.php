@@ -1,6 +1,10 @@
 <?php 
 $page=6;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
+if(isset($_SESSION['username']))
+{
+	header('Refresh:0; url=account.php');
+}
 ?>
 
 <br>

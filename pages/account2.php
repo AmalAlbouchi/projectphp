@@ -1,6 +1,10 @@
 <?php 
 $page=7;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
+if(!isset($_SESSION['username']))
+{
+	header('location:../');
+}
 ?>
 <?php $username=$_SESSION['username'];
 $sql = "SELECT * FROM user WHERE username = '$username'";

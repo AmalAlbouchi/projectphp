@@ -9,7 +9,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">PHOTOBOMB</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">The Best Shop For PRO Photography</h2>
-          <a href="/pages/shop.php" class="btn btn-primary js-scroll-trigger">Visit Our Shop</a>
+          <a href="pages/shop.php" class="btn btn-primary js-scroll-trigger">Visit Our Shop</a>
         </div>
       </div>
 </section>
@@ -21,7 +21,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
       <!-- Featured Project Row -->
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
-          <img class="img-fluid mb-3 mb-lg-0" src="/images/cam1.jpg" alt="">
+          <img class="img-fluid mb-3 mb-lg-0" src="images/cam1.jpg" alt="">
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
@@ -36,7 +36,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
       <!-- Project One Row -->
       <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
         <div class="col-lg-6">
-          <img class="img-fluid" src="/images/cam2.jpg" alt="">
+          <img class="img-fluid" src="images/cam2.jpg" alt="">
         </div>
         <div class="col-lg-6">
           <div class="bg-black text-center h-100 project">
@@ -56,7 +56,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
       <!-- Project Two Row -->
       <div class="row justify-content-center no-gutters">
         <div class="col-lg-6">
-          <img class="img-fluid" src="/images/cam3.jpg" alt="">
+          <img class="img-fluid" src="images/cam3.jpg" alt="">
         </div>
         <div class="col-lg-6 order-lg-first">
           <div class="bg-black text-center h-100 project">
@@ -91,6 +91,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
   </section>
 
         <section class="bg-light" id="team">
+        <br><br><br><br><br><br>
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-12 text-center">
@@ -101,7 +102,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="/images/jihed.jpg" alt="">
+                        <img class="mx-auto rounded-circle" src="images/jihed.jpg" alt="">
                         <h4>Jihed Mastouri</h4>
                         <p class="text-muted">Student</p>
                         <ul class="list-inline social-buttons">
@@ -125,12 +126,12 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
                     </div>
                     <div class="col-sm-6">
                       <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="/images/amal.jpg" alt="">
+                        <img class="mx-auto rounded-circle" src="images/amal.jpg" alt="">
                         <h4>Amal ALbouchi</h4>
                         <p class="text-muted">Student</p>
                         <ul class="list-inline social-buttons">
                           <li class="list-inline-item">
-                            <a target="blank" href="mailto:amalalbouchie@yahoo.fr">
+                            <a target="blank" href="mailto:amalalbouchi@yahoo.fr">
                               <i class="fas fa-envelope-open-text"></i>
                             </a>
                           </li>
@@ -151,6 +152,7 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
                     </div>
                   </div>
                 </div>
+                <br><br><br><br><br><br>
               </section>
 
 
