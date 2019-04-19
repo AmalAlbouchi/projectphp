@@ -3,31 +3,92 @@ $page=3;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 ?>
 
-<div class="container">
-<br>
-<h1>Contact Form</h1>
-<h2> Feel free to reach us for your concerns</h2>
-<br>
-<form action="mail.php" method="post">
-  <div class="form-group">
-    <label>Email address</label>
-    <input type="email" class="form-control" name="mail" placeholder="name@example.com" required>
-    <div class="invalid-feedback">Required</div>
-  </div>
-  <div class="form-group">
-    <label >Subject</label>
-    <textarea class="form-control" name="subject" rows="1"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Text</label>
-    <textarea class="form-control" name="text" rows="3" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Send</button>
-</form>
-
+<div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+            </div>
+            <form action="mail.php"  method="post">
+                <h3>Drop Us a Message</h3>
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" name="txtEmail" class="form-control" placeholder="Your Email *" value="" required>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="Subject" name="txtPhone" class="form-control" placeholder="Subject *" value="" required>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
 </div>
 
-<br> <br>
+<style>
+body{
+    background: -webkit-linear-gradient(left, #0c0c0c, #262626);
+}
+.contact-form{
+    background: #fff;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    width: 70%;
+    height : 75%;
+}
+.contact-form .form-control{
+    border-radius:1rem;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+</style>
+
 <?php 
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/footer.php');
 
