@@ -7,23 +7,22 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 <div class="row">
 
 <div class="col-lg-3">
-
-  <h1 class="my-4">Shop Name</h1>
-
+<br>
+  <h1 class="my-4"><center>Categories<center></h1>
   <form onchange="showProducts()">
   <div id="list_grp" class="list-group">
     <ul>
     <li>
         <input type='radio' value='1' name='radio' id='radio1'/>
-        <label for='radio1'class="list-group-item">Category 1</label>
+        <label for='radio1'class="list-group-item">Digital Cameras</label>
     </li>
     <li>
         <input type='radio' value='2' name='radio'  id='radio2'/>
-        <label for='radio2'class="list-group-item">Category 2</label>
+        <label for='radio2'class="list-group-item">Lenses</label>
     </li>
     <li>
         <input type='radio' value='3' name='radio'  id='radio3'/>
-        <label for='radio3'class="list-group-item">Category 3</label>
+        <label for='radio3'class="list-group-item">Accessories</label>
     </li>
     <li>
         <input type='radio' value='4' name='radio'  id='radio4' checked/>
@@ -50,13 +49,13 @@ include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+              <img class="d-block img-fluid" src="../images/1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+              <img class="d-block img-fluid" src="../images/2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+              <img class="d-block img-fluid" src="../images/3.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
