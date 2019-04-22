@@ -53,7 +53,7 @@ if (!isset($_SESSION["Admin"])){
                     Add Picture <input type="file" name="newimage">
                 </span>
             </div>
-                           <input type="submit" name="submit" value="Submit changes" class="btn btn-success" style="width:260px;">
+                           <input type="submit" name="submit" value="Submit" class="btn btn-success" style="width:260px;">
                 </form>
                 <br><br>
                 <center><h5 class="card-title">Deleting Product</h5></center>
