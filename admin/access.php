@@ -2,12 +2,12 @@
 $page=6;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 if (!isset($_SESSION["admin"])){ 
-if (!isset($_POST["pass"]) && !isset($_POST["username"])){
+if (!isset($_POST["pass"]) || !isset($_POST["username"])){
     ?>
-           <h1>Error</h1> follow this link and <a href="/projectphp/admin"><b>try agin</b></a>...
+           <h1>Error</h1> follow this link and <a href="/projectphp/admin"><b>try again</b></a>...
     <?php
-}elseif (!(strcmp($_POST["username"],"admin") && !(strcmp($_POST["pass"],"admin")))) {
-    $_SESSION['admin']="admin"
+}elseif (($_POST["username"]=="admin") && ($_POST["pass"]=="admin")) {
+    $_SESSION['admin']="admin";
     ?>
     
     <div class="container" style="margin-top: 7%;">
@@ -37,7 +37,7 @@ if (!isset($_POST["pass"]) && !isset($_POST["username"])){
 } 
 else {
     ?>
-       <h1>ACCESS DENIED</h1> follow this link and <a href="/projectphp/pages/admin"><b>try agin</b></a>...
+       <h1>ACCESS DENIED</h1> follow this link and <a href="/projectphp/admin"><b>try again</b></a>...
     <?php
 }
 }else {
