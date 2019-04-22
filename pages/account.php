@@ -14,9 +14,7 @@ $name=$res['first_name'];
 $last=$res['last_name'];
 $date=$res['date_sign'];
 $rev=$res['nb_review'];
-/*$s="select count(id) from review where username='$username'";
-$sthh=mysqli_query($con,$s);
-$rrr= mysqli_fetch_array($sthh);*/
+
 ?>
 
 <div class="container target" style="margin-top:50px;">
@@ -26,7 +24,7 @@ $rrr= mysqli_fetch_array($sthh);*/
             
             <?php 
            if ($res['img']!=null){
-                echo '<center><img width="200px" height="200px"style="border-radius: 20%;" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
+                echo '<center><img style="max-width: 100%; max-height: 300px; border-radius: 20%;" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
             }
                 else 
                 {

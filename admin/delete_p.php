@@ -6,7 +6,11 @@ $id=$_POST['name'];
 $id=intval($id);
 $sql="DELETE FROM product WHERE id=$id";
 $rs=mysqli_query($con,$sql);
-if($rs){
+$sqll="DELETE FROM commande WHERE id=$id";
+$rss=mysqli_query($con,$sqll);
+$sqlll="DELETE FROM review WHERE id=$id";
+$rsss=mysqli_query($con,$sqlll);
+if($rs && $rss && $rsss){
     echo "<div class='container'>
     <br>
     <h1>Product deleted successfully</h1>

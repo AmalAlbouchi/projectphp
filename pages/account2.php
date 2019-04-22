@@ -17,6 +17,7 @@ if($res['gender']==1){$gender='Male';}else{$gender='Female';}
 $mail=$res['email'];
 $add=$res['address'];
 $phone=$res['phone'];
+$rev=$res['nb_review'];
 ?>
 
 <div class="container target" style="margin-top:50px;">
@@ -26,7 +27,7 @@ $phone=$res['phone'];
             
             <?php 
            if ($res['img']!=null){
-                echo '<center><img class="rounded" width="200px" height="200px" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
+            echo '<center><img style="max-width: 100%; max-height: 300px; border-radius: 20%;" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
             }
                 else 
                 {
@@ -54,7 +55,7 @@ $phone=$res['phone'];
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Reviews
-                    <span class="badge badge-light badge-pill">1</span>
+                    <span class="badge badge-light badge-pill"><?php echo $rev;?></span>
                 </li>
                 </ul>
 

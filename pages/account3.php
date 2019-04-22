@@ -14,6 +14,7 @@ $name=$res['first_name'];
 $last=$res['last_name'];
 $date=$res['date_sign'];
 $pass=$res['password'];
+$rev=$res['nb_review'];
 $_SESSION['pass']=$pass;
 ?>
 
@@ -24,7 +25,7 @@ $_SESSION['pass']=$pass;
             
             <?php 
            if ($res['img']!=null){
-                echo '<center><img class="rounded" width="200px" height="200px" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
+            echo '<center><img style="max-width: 100%; max-height: 300px; border-radius: 20%;" src="data:image/jpeg;base64,'.base64_encode( $res['img'] ).'"/></center>';
             }
                 else 
                 {
@@ -52,7 +53,7 @@ $_SESSION['pass']=$pass;
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Reviews
-                    <span class="badge badge-light badge-pill">1<?php?></span>
+                    <span class="badge badge-light badge-pill"><?php echo $rev;?></span>
                 </li>
                 </ul>
 
@@ -227,8 +228,7 @@ function myFunction() {
         document.form.email.value == '' && document.form.address.value == '' && 
         document.form.number.value == '' && document.form.pass1.value == '' && 
         document.form.pass2.value == '' && document.form.pass3.value == '' && document.form.newimage.value == ''){return false;}
-        //else if(document.form.number.value != '' && document.form.phone.value == '')
-        //{return false;}
+        
         return true;
       }
 </script>

@@ -3,7 +3,7 @@ $page=6;
 include ($_SERVER['DOCUMENT_ROOT'].'/projectphp/static/header.php');
 if(!isset($_SESSION['username'])){
     echo "<script>alert('Please sign in to leave a review')</script>";
-    header('Refresh:0; url=login.php');}
+    header('Refresh:0; url=loginform.php');}
 
 else{
 $rate = $_POST["stars"];
@@ -41,7 +41,11 @@ else//if !exist
 {
 $reg= "update review set text='$rev', date_review='$date', rate='$rate' where username='$username' and id='$id'";
 $rs=mysqli_query($con,$reg);
+if ($ress['p_rate']==1){
+    $a=0;
+}else{
 $a=(($ress['rate']*$ress['p_rate'] - $res['rate'])/($ress['p_rate'] -1));
+}
 $o="update product set rate = $a where id = $id;";
 $rat=mysqli_query($con,$o);
 $nrate="update product set rate = ((rate*(p_rate-1) + $rate)/(p_rate)) where id = $id;";

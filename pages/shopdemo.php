@@ -11,7 +11,7 @@ if ($catg==4) {
   $sql= "SELECT * FROM product Where (category = $catg) AND (price > $p)";
 }
 $result= mysqli_query($con,$sql);
-//$res=mysqli_fetch_array($result);
+
 if ($result!=FALSE){
       while ($product = mysqli_fetch_assoc($result)) {
     echo '<div class="col-lg-4 col-md-6 mb-4">

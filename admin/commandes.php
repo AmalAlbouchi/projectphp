@@ -13,7 +13,7 @@ if (!isset($_SESSION["Admin"])){
         <h5 class="card-title">Commandes:</h5>
             <table class="table">
 <?php
-$sql="SELECT commande.username, user.phone FROM commande INNER JOIN user on commande.username = user.username";
+$sql="SELECT commande.username, user.phone FROM commande INNER JOIN user on commande.username = user.username group by username";
     $rs=mysqli_query($con,$sql);    
     if ($rs!=FALSE){
         while ($users = mysqli_fetch_assoc($rs)) {
@@ -40,6 +40,7 @@ echo '<tr>
 
     </table>
     </div>
+    <br><br><br><br>
 
 
 
